@@ -4,6 +4,8 @@ Global $increase_coords[2] = [1097, 940]
 Global $item_coords[2] = [1515, 357]
 
 HotKeySet("{F11}", "Improve")
+HotKeySet("{F5}", "Improve3")
+HotKeySet("{F6}", "Improve10")
 HotKeySet("{F10}", "Receive")
 HotKeySet("{F9}", "Finish")
 
@@ -21,6 +23,18 @@ Func Movto_item()
    MouseMove($item_coords[0], $item_coords[1], 20)
 EndFunc
 
+Func Improve3()
+   For $x = 0 to 2 Step 1
+	  Improve()
+   Next
+EndFunc
+
+Func Improve10()
+   For $x = 0 to 9 Step 1
+	  Improve()
+   Next
+EndFunc
+
 Func Select_item()
    Movto_item()
    Sleep(1800)
@@ -32,7 +46,6 @@ Func Select_item()
    Sleep(1800)
 EndFunc
 
-; TODO: loop
 Func Improve()
    $timer = TimerInit()
    Select_item()
