@@ -3,11 +3,16 @@ Global $timer
 Global $increase_coords[2] = [1097, 940]
 Global $item_coords[2] = [1515, 357]
 
-HotKeySet("{F11}", "Improve")
+HotKeySet("{F2}", "Receive3")
+HotKeySet("{F3}", "Receive6")
+HotKeySet("{F4}", "Receive10")
 HotKeySet("{F5}", "Improve3")
-HotKeySet("{F6}", "Improve10")
-HotKeySet("{F10}", "Receive")
+HotKeySet("{F6}", "Improve6")
+HotKeySet("{F7}", "Improve10")
 HotKeySet("{F9}", "Finish")
+HotKeySet("{F10}", "Receive")
+HotKeySet("{F11}", "Improve")
+
 
 Func _LOG($string)
    ConsoleWrite(String(Int(TimerDiff($timer))))
@@ -25,6 +30,12 @@ EndFunc
 
 Func Improve3()
    For $x = 0 to 2 Step 1
+	  Improve()
+   Next
+EndFunc
+
+Func Improve6()
+   For $x = 0 to 5 Step 1
 	  Improve()
    Next
 EndFunc
@@ -64,6 +75,24 @@ Func Improve()
    Next
 EndFunc
 
+Func Receive3()
+   For $x = 0 to 2 Step 1
+	  Receive()
+   Next
+EndFunc
+
+Func Receive6()
+   For $x = 0 to 5 Step 1
+	  Receive()
+   Next
+EndFunc
+
+Func Receive10()
+   For $x = 0 to 9 Step 1
+	  Receive()
+   Next
+EndFunc
+
 ; TODO: loop
 Func Receive()
    $timer = TimerInit()
@@ -72,6 +101,7 @@ Func Receive()
    Send("X")
    sleep(200)
    Send("E")
+   Sleep(500)
 EndFunc
 
 Func Finish()
