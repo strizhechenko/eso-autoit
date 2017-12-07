@@ -4,8 +4,8 @@ Global $increase_coords[2] = [1097, 940]
 Global $item_coords[2] = [1515, 357]
 
 HotKeySet("{F2}", "Receive3")
-HotKeySet("{F3}", "Receive6")
-HotKeySet("{F4}", "Receive10")
+HotKeySet("{F3}", "Receive10")
+HotKeySet("{F4}", "Receive30")
 HotKeySet("{F5}", "Improve3")
 HotKeySet("{F6}", "Improve6")
 HotKeySet("{F7}", "Improve10")
@@ -29,20 +29,20 @@ Func Movto_item()
 EndFunc
 
 Func Improve3()
-   For $x = 0 to 2 Step 1
-	  Improve()
-   Next
+   ImproveX(3)
 EndFunc
 
 Func Improve6()
-   For $x = 0 to 5 Step 1
-	  Improve()
-   Next
+   ImproveX(6)
 EndFunc
 
 Func Improve10()
-   For $x = 0 to 9 Step 1
-	  Improve()
+   ImproveX(10)
+EndFunc
+
+Func ImproveX($count)
+   For $x = 1 to $count Step 1
+      Improve()
    Next
 EndFunc
 
@@ -75,25 +75,24 @@ Func Improve()
    Next
 EndFunc
 
-Func Receive3()
-   For $x = 0 to 2 Step 1
-	  Receive()
+Func ReceiveX($count)
+   For $x = 1 to $count Step 1
+      Receive()
    Next
 EndFunc
 
-Func Receive6()
-   For $x = 0 to 5 Step 1
-	  Receive()
-   Next
+Func Receive3()
+   Receive(3)
 EndFunc
 
 Func Receive10()
-   For $x = 0 to 9 Step 1
-	  Receive()
-   Next
+   Receive(10)
 EndFunc
 
-; TODO: loop
+Func Receive30()
+   Receive(30)
+EndFunc
+
 Func Receive()
    $timer = TimerInit()
    Send("E")
