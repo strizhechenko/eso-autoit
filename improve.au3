@@ -12,7 +12,8 @@ HotKeySet("{F7}", "Improve10")
 HotKeySet("{F9}", "Finish")
 HotKeySet("{F10}", "Receive")
 HotKeySet("{F11}", "Improve")
-
+HotKeySet("{F1}", "StartRefine")
+HotKeySet("{F8}", "Pause")
 
 Func _LOG($string)
    ConsoleWrite(String(Int(TimerDiff($timer))))
@@ -82,15 +83,15 @@ Func ReceiveX($count)
 EndFunc
 
 Func Receive3()
-   Receive(3)
+   ReceiveX(3)
 EndFunc
 
 Func Receive10()
-   Receive(10)
+   ReceiveX(10)
 EndFunc
 
 Func Receive30()
-   Receive(30)
+   ReceiveX(30)
 EndFunc
 
 Func Receive()
@@ -101,6 +102,26 @@ Func Receive()
    sleep(200)
    Send("E")
    Sleep(500)
+EndFunc
+
+Func Refine()
+   _LOG("refine")
+   Send("r")
+   Sleep(900)
+EndFunc
+
+Func StartRefine()
+   $trigger = False
+   $timer = TimerInit()
+   _LOG("Start")
+   While not $trigger
+	  refine()
+   WEnd
+   Return
+EndFunc
+
+Func Pause()
+   $trigger = True
 EndFunc
 
 Func Finish()
