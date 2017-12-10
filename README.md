@@ -16,9 +16,16 @@ You need [autoit](https://www.autoitscript.com/site/autoit/downloads/), I recomm
 
 ## Usage
 
-Don't afraid to look at code, it's small and simple.
-
-1. Run the binary you need.
-2. F10 or F11 starts the routine
-3. In some cases F10 is a pause.
-4. F9 is exit.
+```
+HotKeySet("{F2}", "Receive3")
+HotKeySet("{F3}", "Receive10")
+HotKeySet("{F4}", "Receive30")
+HotKeySet("{F5}", "Improve3")
+HotKeySet("{F6}", "Improve6")
+HotKeySet("{F7}", "Improve10")
+HotKeySet("{F9}", "Finish")
+HotKeySet("{F10}", "Receive")
+HotKeySet("{F11}", "Improve")
+HotKeySet("{F1}", "StartRefine")
+HotKeySet("{F8}", "Pause")
+```
