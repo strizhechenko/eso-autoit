@@ -3,17 +3,21 @@ Global $timer
 Global $increase_coords[2] = [1097, 940]
 Global $item_coords[2] = [1515, 357]
 
+HotKeySet("{F1}", "Receive")
 HotKeySet("{F2}", "Receive3")
 HotKeySet("{F3}", "Receive10")
 HotKeySet("{F4}", "Receive30")
-HotKeySet("{F5}", "Improve3")
-HotKeySet("{F6}", "Improve6")
-HotKeySet("{F7}", "Improve10")
-HotKeySet("{F9}", "Finish")
-HotKeySet("{F10}", "Receive")
-HotKeySet("{F11}", "Improve")
-HotKeySet("{F1}", "StartRefine")
-HotKeySet("{F8}", "Pause")
+
+HotKeySet("{F5}", "Improve")
+HotKeySet("{F6}", "Improve3")
+HotKeySet("{F7}", "Improve6")
+HotKeySet("{F8}", "Improve10")
+
+HotKeySet("{F9}", "StartRefine")
+HotKeySet("{F10}", "Pause")
+HotKeySet("{F11}", "Finish")
+
+
 
 Func _LOG($string)
    ConsoleWrite(String(Int(TimerDiff($timer))))
