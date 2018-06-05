@@ -25,10 +25,6 @@ Func _LOG($string)
    ConsoleWrite($string & @CRLF)
 EndFunc
 
-Func Movto_increase()
-   MouseMove($increase_coords[0], $increase_coords[1], 20)
-EndFunc
-
 Func Movto_item()
    MouseMove($item_coords[0], $item_coords[1], 20)
 EndFunc
@@ -58,7 +54,6 @@ Func Select_item()
    Sleep(10)
    MouseClick("main")
    Sleep(50)
-   Movto_increase()
    Sleep(1800)
 EndFunc
 
@@ -67,12 +62,6 @@ Func Improve()
    Select_item()
    For $i = 0 To 2 Step 1
 	  Sleep(1000)
-	  MouseClick("main")
-	  Sleep(200)
-	  MouseClick("main")
-	  Sleep(200)
-	  MouseClick("main")
-	  Sleep(200)
 	  Send("R")
 	  Sleep(500)
 	  Send("E")
